@@ -15,7 +15,21 @@ The code uses a few data files by default which can be seen on the repository. T
 * .list file which contains the list of sources in the format HR_RADec (For eg: HR_0000-40).
 * .csv file which contains list of pulsar names and their corresponding period seperated by ',' with a header "Pulsar_name, Period".
 
-It is required that the new files given by user should follow same format for respective data. The path of the files is also required to be the same for all file, which can be changed accordingly in the utility.py file.
+It is required that the new files given by user should follow same format for respective data. The path of the files is also required to be the same for all file, which can be changed accordingly in the <code>utility.py</code> file.
+
+
+## Running the program
+The user can run the program either on jupyter, colab or terminal using the commands.
+### To run the program using jypyter notebook or google colaboratory
+the file <code>GHRSS_survey_plot.ipynb</code> must be opened. It is required to run each cells in the sequential order. If the user is running the program on google colabotory, then all the data files can be saved on the google drive and the the correct path of these files must be given wherever required. 
+
+### To run the program using command on terminal
+it is required to run only <code>main.py</code> file using the command.
+```
+python3 main.py
+```
+
+ensure the python environment has required python packages and the path of the data files is correct.
 
 ## Input and Execution
 The user it first given the choice to plot either on existing figure or to plot a complete new figure. On choosing the option to plot a new figure, any previously drawn plots will be erased permanently. After this, the user is given the option to plot various data as follows
@@ -30,4 +44,4 @@ The user it first given the choice to plot either on existing figure or to plot 
 After the user gives input for any one of the 3 categories, the user will be again given same options in a loop until the the option "End" is chosen.
 
 ## Output
-The output of the program is a single figure containing the plots for all data files as given by user. The figure contains a legend denoting the colour and symbol used for a particular data. The labels used in the legend are same as the file names. The normal pulsars, MSPs and RRATs are all given different symbols. It is required that in order to change the markers/colors necessary changes in the program (GHRSS.py) can be made.
+The output of the program is a single figure containing the plots for all data files as given by user. The figure contains a legend denoting the colour and symbol used for a particular data. The labels used in the legend are same as the file names. The normal pulsars, MSPs and RRATs are all given different symbols. It is required that in order to change the markers/colors necessary changes in the program (<code>functions.py</code>) can be made.
