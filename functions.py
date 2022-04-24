@@ -25,8 +25,6 @@ class GHRSS:
         self.coord_dec = []
         self.coord_l = []
         self.coord_b = []
-        self.radec = 0
-        self.lb = 0
         self.label_RaDec = []
         self.label_lb = []
         self.color_count = 0
@@ -206,7 +204,7 @@ class GHRSS:
             loc="upper right", bbox_to_anchor=(1, 1.15), ncol=2, prop={"size": 10}
         )
         function.save_ax(ax)
-        plt.savefig("GHRSS.png", format="png", dpi=150)
+        plt.savefig("GHRSS.png", format="png", dpi=300)
         plt.show()
 
     def accept_coord(self):
@@ -215,12 +213,10 @@ class GHRSS:
             self.label_RaDec.append(input("enter the name: "))
             self.coord_ra.append(float(input("Enter RA")))
             self.coord_dec.append(float(input("Enter declination")))
-            self.radec = 1
         elif n == "2":
             self.label_lb.append(input("enter the name: "))
             self.coord_l.append(float(input("Enter longitude")))
             self.coord_b.append(float(input("Enter latitude")))
-            self.lb = 1
 
     def plot_using_coordinate(self, ax):
         j = 0
