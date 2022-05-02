@@ -6,6 +6,7 @@ from matplotlib.pyplot import cm
 import numpy
 from ghrss import utility
 import pickle
+from ghrss import config
 
 
 class GHRSS:
@@ -18,8 +19,7 @@ class GHRSS:
         self.file_names_objects = []
         self.colors1 = []
         self.colors2 = []
-        # colors can changed as per output requirement
-        self.colors_init = ["r", "g", "y", "k", "violet"]
+        self.colors_init = config.COLORS
         self.coordinates = 0
         self.coord_ra = []
         self.coord_dec = []
@@ -39,7 +39,7 @@ class GHRSS:
         color_new: the updated list of of the colors
 
         """
-        self.colors2 = iter(cm.Blues(numpy.linspace(0, 1, 6)))
+        self.colors2 = iter(cm.Blues(numpy.linspace(0, 1, 5)))
         with open("../colors.txt", "w") as f:
             for c in color_new:
                 f.write("%s\n" % c)
@@ -260,7 +260,7 @@ class GHRSS:
             loc="upper right", bbox_to_anchor=(1, 1.15), ncol=2, prop={"size": 10}
         )
         utility.save_ax(ax)
-        plt.savefig("GHRSS.png", format="png", dpi=300)
+        plt.savefig("plot.png", format="png", dpi=300)
         plt.show()
 
     def accept_coord(self):
@@ -276,7 +276,12 @@ class GHRSS:
             self.coord_b.append(float(input("Enter latitude")))
 
     def plot_using_coordinate(self, ax):
-        """Plots the coordinates accepted by function accept_coord()"""
+        """
+        ###Description:
+        Plots the coordinates accepted by function accept_coord()
+        ###Args:
+        ax: plot object
+        """
         j = 0
         for i in self.label_RaDec:
             coord1 = SkyCoord(

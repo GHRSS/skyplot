@@ -20,12 +20,10 @@ def read_data(file_names, header):
     n = len(file_names)
     map_to_files = {}
     header_names = []
-    file_path = config.FILE_PATH
+    file_path = config.FILE_PATH # change the path of file accordingly in config.py
     for f in file_names:
-        # change the path of file accordingly
         if header:
             try:
-                # Give the correct path of the files
                 map_to_files[f] = ascii.read(
                     file_path + f + ".list", header_start=0, data_start=0
                 )
@@ -35,7 +33,6 @@ def read_data(file_names, header):
             header_names.append(map_to_files[f][0][0])
         else:
             try:
-                # Give the correct path of the files
                 map_to_files[f] = ascii.read(
                     file_path + f + ".csv", header_start=0, data_start=1, delimiter=","
                 )
@@ -61,7 +58,6 @@ def append_file(a, b):
     file_path = config.FILE_PATH
     f1 = open(file_path + a, "a")
     try:
-        # change the path of file accordingly
         f2 = open(file_path + b, "r")
         f1.write("\n")
         f1.write(f2.read())

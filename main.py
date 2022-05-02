@@ -1,4 +1,4 @@
-import functions
+from ghrss import functions
 
 
 ghrss_obj = functions.GHRSS()
