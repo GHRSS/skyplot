@@ -13,9 +13,9 @@ The code uses the following python packages, which must be installed before runn
 ### Data Files
 The code uses a few data files by default which can be seen on the repository. There are two kinds od datafiles: 
 * .list file contains the sources in the format HR_RADec (E.g., HR_0000-40).
-* .csv file contains the list of pulsar names and their corresponding period separated by ',' with a header "Pulsar_name, Period".
+* .csv file contains the list of pulsar names and their corresponding period in milliseconds separated by ',' with a header "Pulsar_name, Period". 
 
-It is required that the new files given by the user should follow the same format for respective data. The path of the files is also required to be the same for all files, which can be changed accordingly in the <code>utility.py</code> file.
+It is required that the new files given by the user should follow the same format for respective data. The path of the files is also required to be the same for all files, which can be changed accordingly in the <code>config.py</code>.
 
 
 ## Running the program
@@ -47,12 +47,13 @@ The user is first given a choice to plot either on the existing figure or a comp
   * Phase-2 : To plot objects discovered in phase-2 of the survey, new data can also be appended. (.csv file without any header is the accepted format)
   * New data files: To plot objects using the names of the pulsars (.csv file with appropriate header)
   * By giving the coordinates: To plot using particular coordinates (only one object at a time). The coordinates can be either Right Ascension-declination or Galactic latitude and longitude format.
-* End: To terminate the input loop and see the final plot.
+* End: To terminate the input loop and see the final plot. The plot image is saved as <code>plot.png</code>
+
 After the user gives input for any of the three categories, the user will be again given the same options in a loop until the option "End" is chosen.
 For plotting more files on the figure already made, rerun the program/cell.
 
 While plotting onto the existing graph, if the user is plotting sources, the plotted pulsars/RRATs might be overlapped. In such cases, it is required to re-plot the pulsar using the corresponding file/ coordinates.
 
 ## Output
-The output of the program is a single figure containing the plots for all data files as given by the user. The figure contains a legend denoting the color and symbol used for a particular data. The labels used in the legend are the same as the file names. The normal pulsars, MSPs, and RRATs are all given different symbols. It is required that in order to change the markers/colors, necessary changes in the program (<code>functions.py</code>) can be made. The following figure shows a sample output plot of the program.
+The output of the program is a single figure containing the plots for all data files as given by the user. The figure contains a legend denoting the color and symbol used for a particular data. The labels used in the legend are the same as the file names. The normal pulsars, MSPs, and RRATs are all given different symbols. It is required that in order to change the markers/colors, necessary changes in the file (<code>config.py</code>) can be made. The following figure shows a sample output plot of the program.
 ![GHRSS_plot1](https://user-images.githubusercontent.com/101509174/164984008-261fcb9c-6680-409c-ba06-17eeec25eb90.png)
