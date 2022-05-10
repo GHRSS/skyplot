@@ -14,6 +14,7 @@ import matplotlib.pyplot as plt
 from typing import List
 from attrs import define
 from pathlib import Path
+from astropy.coordinates import Angle
 from astropy.coordinates import SkyCoord
 from astropy.units import degree, hourangle
 
@@ -24,9 +25,14 @@ here = here.parent
 data = here / "data"
 
 
-def beams():
+def extract_beams(fname: str):
+
+    """
+    Extract the center coordinates of beams in the GHRSS survey.
+    """
+
     centers: List[str] = []
-    with open(data / "GHRSS.list.obsvd", "r") as lines:
+    with open(data / f"{fname}", "r") as lines:
         for line in lines:
             line = line.strip()
             suffix = line.replace("HR_", "")
@@ -35,29 +41,71 @@ def beams():
             dec = ":".join([dec, "00"])
             dec = "".join(["-", dec])
             centers.append(" ".join([ra, dec]))
-    return SkyCoord(centers, frame="icrs", unit=(hourangle, degree))
+    return centers
+
+
+def get_galactic(coords: SkyCoord):
+
+    """
+    Return galactic coordinates from a given SkyCoord object.
+    """
+
+    return zip(
+        *[
+            (l, b)
+            for (l, b) in zip(
+                coords.galactic.l.wrap_at(180 * degree).radian,
+                coords.galactic.b.wrap_at(180 * degree).radian,
+            )
+            if (b < Angle(-5 * degree).radian) or (b > Angle(5 * degree).radian)
+        ]
+    )
 
 
 @define
-class SkyPlot:
+class Sky:
 
     """
     Class that plots the sky coverage and discoveries of the GHRSS survey.
     """
 
     beams: SkyCoord
+    observed: SkyCoord
+    unobserved: SkyCoord
 
     @classmethod
     def create(cls):
-        return cls(beams=beams())
+
+        """
+        Create an instance of the `Sky` class.
+        """
+
+        beams = extract_beams("GHRSS.list")
+        observed = extract_beams("GHRSS.list.obsvd")
+        unobserved = [beam for beam in beams if beam not in observed]
+
+        return cls(
+            *[
+                SkyCoord(
+                    coord,
+                    frame="icrs",
+                    unit=(hourangle, degree),
+                )
+                for coord in [beams, observed, unobserved]
+            ]
+        )
 
     def plot(self):
 
-        gl = self.beams.galactic.l.wrap_at(180 * degree).radian
-        gb = self.beams.galactic.b.wrap_at(180 * degree).radian
+        """
+        Plot the sky coverage for the GHRSS survey.
+        """
 
-        ax = plt.subplot(111, projection="aitoff")
-        ax.scatter(gl, gb)
-        ax.grid(True)
+        ax = plt.subplot(projection="aitoff")
+        ax.scatter(*get_galactic(self.observed))
+        ax.scatter(*get_galactic(self.unobserved))
+        ax.set_title("The GHRSS Survey")
+        ax.set_ylabel("Galactic Latitude, b")
+        ax.set_xlabel("Galactic Longitude, l")
         plt.tight_layout()
         plt.show()

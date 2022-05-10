@@ -1,3 +1,3 @@
-from .core import SkyPlot
+from .core import Sky
 
-__all__ = ["SkyPlot"]
+__all__ = ["Sky"]
