@@ -21,16 +21,12 @@ It is required that the new files given by the user should follow the same forma
 ## Running the program
 The user can run the program either on jupyter, google colaboratory, or terminal using the commands.
 ### To run the program using jypyter notebook or google colaboratory
-the file <code>GHRSS_survey_plot.ipynb</code> must be opened. It is required to run each cell in the sequential order before running the last cell containing the following code:
-```
-ghrss_obj = GHRSS()
-ghrss_obj.accept_choice()
-```
-Here GHRSS is the class defined in the second cell, and ghrss_obj is the object of class GHRSS. function <code>accept_choice()</code> is defined in this class and accepts the input from user. In order to plot more, this cell can be rerun.
-If the user is running the program on google colaboratory, then all the data files can be saved on google drive, and the path of these files must be given wherever required. 
+It is required to run the single cell in <code>GHRSS_survey_plot.ipynb</code>
+
+If the user is running the program on google colaboratory, then all the data files can be saved on google drive, and the path of these files must be given <code>config.py</code>
 
 ### To run the program using command on terminal
-it is required to run only <code>main.py</code> file using the following command.
+It is required to run <code>main.py</code> file using the following command.
 ```
 python3 main.py
 ```
@@ -57,3 +53,22 @@ While plotting onto the existing graph, if the user is plotting sources, the plo
 ## Output
 The output of the program is a single figure containing the plots for all data files as given by the user. The figure contains a legend denoting the color and symbol used for a particular data. The labels used in the legend are the same as the file names. The normal pulsars, MSPs, and RRATs are all given different symbols. It is required that in order to change the markers/colors, necessary changes in the file (<code>config.py</code>) can be made. The following figure shows a sample output plot of the program.
 ![GHRSS_plot1](https://user-images.githubusercontent.com/101509174/164984008-261fcb9c-6680-409c-ba06-17eeec25eb90.png)
+
+# Survey area plots
+This code is the python program to plot the survey areas on the galatic coordinate system using the declination range or the latitude and longitude range. The output of the program is the single plot containing the shaded area with the sky temeperature map (Haslam 408 MHz Map)
+
+## Running the program
+The package <code>survey_area</code> contains the functions for plotting survey areas. It is required to run <code>main_survey_plots.py</code> file using the following command.
+```
+python3 main_survey_plots.py
+```
+
+Ensure that the Python environment has required python packages.
+
+## Input
+The user is given the choice of shading the survey area using 2 options
+* declination range: maximum and minimum value of declination should be entered.
+* Lattitude and longitude range: maximum and minimum value of the latitude and longitude should be entered.
+
+## Output
+The plot shows the shaded survey region according to the entered values with the sky temperature map.
