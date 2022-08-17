@@ -20,7 +20,7 @@ def read_data(file_names, header):
     n = len(file_names)
     map_to_files = {}
     header_names = []
-    file_path = config.FILE_PATH # change the path of file accordingly in config.py
+    file_path = config.FILE_PATH  # change the path of file accordingly in config.py
     for f in file_names:
         if header:
             try:

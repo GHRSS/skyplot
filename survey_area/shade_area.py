@@ -264,9 +264,7 @@ class SurveyPlot:
         ax.fill(L, B, color=d, alpha=a)
 
     def create_ax(self):
-        data = plt.imread(
-            "./haslam408.png"
-        )
+        data = plt.imread("./haslam408.png")
 
         fig = plt.figure(figsize=(15, 15))
         ax0 = fig.add_subplot(111)
