@@ -1,0 +1,1465 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>ghrss.functions API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ghrss.functions</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import astropy.coordinates as coord
+from astropy import units as u
+from astropy.coordinates import SkyCoord
+import matplotlib.pyplot as plt
+from matplotlib.pyplot import cm
+import numpy
+from ghrss import utility
+import pickle
+from ghrss import config
+
+
+class GHRSS:
+    def __init__(self):
+        self.RA_source = {}
+        self.Dec_source = {}
+        self.RA_objects = {}
+        self.Dec_objects = {}
+        self.file_names_sources = []
+        self.file_names_objects = []
+        self.colors1 = []
+        self.colors2 = []
+        self.colors_init = config.COLORS
+        self.coordinates = 0
+        self.coord_ra = []
+        self.coord_dec = []
+        self.coord_l = []
+        self.coord_b = []
+        self.label_RaDec = []
+        self.label_lb = []
+        self.color_count = 0
+
+    def write_colors(self, color_new):
+        &#34;&#34;&#34;
+        ###Description
+        writes the colors existing in list colors1 and colors 2.
+        (color map can be changed according to output requirement)
+
+        ###Args:
+        color_new: the updated list of of the colors
+
+        &#34;&#34;&#34;
+        self.colors2 = iter(cm.Blues(numpy.linspace(0, 1, 5)))
+        with open(&#34;../colors.txt&#34;, &#34;w&#34;) as f:
+            for c in color_new:
+                f.write(&#34;%s\n&#34; % c)
+        f.close()
+        x = str(self.color_count)
+        with open(&#34;../colors2.txt&#34;, &#34;w&#34;) as f1:
+            f1.write(&#34;%s&#34; % x)
+        f1.close()
+
+    def read_colors(self):
+        &#34;&#34;&#34;
+        Reads the colors from the files colors.txt and colors2.txt and stores in the variables
+        &#34;&#34;&#34;
+        color1 = []
+        with open(&#34;../colors.txt&#34;, &#34;r&#34;) as file:
+            temp = file.readlines()
+        for i in temp:
+            temp2 = i.split(&#34;\n&#34;)
+            color1.append(temp2[0])
+        self.colors1 = color1
+        # color map can be changed
+        self.colors2 = iter(cm.Blues(numpy.linspace(0, 1, 6)))
+        with open(&#34;../colors2.txt&#34;, &#34;r&#34;) as file:
+            temp = file.readlines()
+        temp2 = int(temp[0])
+        while temp2:
+            c = next(self.colors2)
+            temp2 = temp2 - 1
+            self.color_count = self.color_count + 1
+
+    def set_coordinates(self, file_names, data, header, split_char):
+        &#34;&#34;&#34;
+        ###Description:
+        Takes the data read from files and obtains the coordinates from the names of the pulsar/source in the form RA and Dec
+        ###Args:
+        file_names: list of the file names
+
+        data: table consisting of the data read from files
+
+        header: header of each file
+
+        split_char: the character indicating where to split the name of source(&#39;_&#39;) or pulsar(&#39;J&#39;)
+        &#34;&#34;&#34;
+        c = []
+        q = {}
+        s = {}
+
+        for i in range(0, len(file_names)):
+            if split_char == &#34;J&#34;:
+                header_index = header[0]
+            else:
+                header_index = header[i]
+            s[i] = data[file_names[i]][header_index]
+            k = 0
+            ra = []
+            dec = []
+            for j in s[i]:
+                q[k] = s[i][k].split(split_char)
+                c = q[k][1]
+                ra.append(c[0] + c[1] + &#34;:&#34; + c[2] + c[3])
+                if len(c) == 7:
+                    dec.append(c[4] + c[5] + c[6])
+                else:
+                    dec.append(c[4] + c[5] + c[6] + &#34;:&#34; + c[7] + c[8])
+                k = k + 1
+            if split_char == &#34;J&#34;:
+                self.RA_objects[i] = ra
+                self.Dec_objects[i] = dec
+            else:
+                self.RA_source[i] = ra
+                self.Dec_source[i] = dec
+
+    def plot_area(self, files, n1, ax):
+        &#34;&#34;&#34;
+        ###Description:
+        Converts the RA-Declination of sources to galactic coordinates and plots these coordinates on the galactic coordinate system using the figure object ax.
+        The points with latitutude within the range of -5 and +5 are not plotted, because this region is avoided in the survey.
+        ###Args:
+        files: list of names of the files
+
+        ax: plot object
+        &#34;&#34;&#34;
+        c = next(self.colors2)
+
+        lat = []
+        lon = []
+        for i in range(0, len(files)):
+            lat = []
+            lon = []
+            coord1 = SkyCoord(
+                self.RA_source[i], self.Dec_source[i], unit=(u.hourangle, u.deg)
+            )
+            coord1 = coord1.galactic
+            L = coord1.l.wrap_at(180 * u.degree).radian
+            B = coord1.b.wrap_at(180 * u.degree).radian
+            c = next(self.colors2)
+            for j, k in zip(B, L):
+                if (
+                    j &lt; coord.Angle(-5, u.degree).radian
+                    or j &gt; coord.Angle(5, u.degree).radian
+                ):
+                    lat.append(j)
+                    lon.append(k)
+            ax.scatter(lon, lat, color=c, label=files[i])
+            self.color_count = self.color_count + 1
+
+    def plot_discovered(self, file_d, data, n2, ax):
+        &#34;&#34;&#34;
+        ###Description:
+        Converts the RA-declination of pulsars and RRATs to galactic coordinates.
+        Using the periods of the pulsars, they are divided into different types (normal and MSPs), RRATs are given periods as &#39;-&#39; in the files.
+        These are then plotted using different symbols, same color for a given file.
+        ###Args:
+        file_d: list of the file names (discovery data)
+
+        data: table consisting of data read from files
+
+        ax: plot object
+        &#34;&#34;&#34;
+        for i in range(0, len(file_d)):
+            coord1 = SkyCoord(
+                self.RA_objects[i], self.Dec_objects[i], unit=(u.hourangle, u.deg)
+            )
+            coord1 = coord1.galactic
+            L = coord1.l.wrap_at(180 * u.degree).radian
+            B = coord1.b.wrap_at(90 * u.degree).radian
+            k = 0
+            lat_rrat = []
+            lat_msp = []
+            lat_normalpulsar = []
+            lon_rrat = []
+            lon_msp = []
+            lon_normalpulsar = []
+            for x in L:
+                p = data[file_d[i]][&#34;Period&#34;][k]
+                if float(p) &lt; 0:
+                    lat_rrat.append(L[k])
+                    lon_rrat.append(B[k])
+                elif float(p) &lt; 30:
+                    lat_msp.append(L[k])
+                    lon_msp.append(B[k])
+                else:
+                    lat_normalpulsar.append(L[k])
+                    lon_normalpulsar.append(B[k])
+                k = k + 1
+            if len(lat_rrat) != 0:
+                ax.scatter(
+                    lat_rrat,
+                    lon_rrat,
+                    color=self.colors1[0],
+                    marker=&#34;^&#34;,
+                    s=80,
+                    label=&#34;RRATs discovered in &#34; + file_d[i],
+                )
+            if len(lat_normalpulsar) != 0:
+                ax.scatter(
+                    lat_normalpulsar,
+                    lon_normalpulsar,
+                    color=self.colors1[0],
+                    label=&#34;Pulsars discovered in &#34; + file_d[i],
+                )
+            if len(lat_msp) != 0:
+                ax.scatter(
+                    lat_msp,
+                    lon_msp,
+                    color=self.colors1[0],
+                    marker=&#34;*&#34;,
+                    s=80,
+                    label=&#34;MSPs discovered in &#34; + file_d[i],
+                )
+            self.colors1.pop(0)
+
+    def read_and_plot_sources(self, file_names, ax):
+        &#34;&#34;&#34;
+        ###Description:
+        Calls the function to read data files containing the list of sources
+        then subsequently calls the function to obtain coordinates and the function to plot the same.
+        ###Args:
+        file_names: list of file names
+
+        ax: plot object
+        &#34;&#34;&#34;
+        data_table, n1, header = utility.read_data(file_names, header=True)
+        if n1 != 0:
+            self.set_coordinates(file_names, data_table, header, split_char=&#34;_&#34;)
+            self.plot_area(file_names, n1, ax)
+
+    def read_and_plot_objects(self, file_d, ax):
+        &#34;&#34;&#34;
+        ###Description:
+        Calls the function to read data files containing the list of pulsar names and period (.csv files)
+        then subsequently calls the function to obtain coordinates and the function to plot the same.
+        ###Args:
+        file_d: list of files names
+
+        ax: plot object
+        &#34;&#34;&#34;
+        data_table, n2, header = utility.read_data(file_d, header=False)
+        if data_table:
+            self.set_coordinates(file_d, data_table, header, split_char=&#34;J&#34;)
+            self.plot_discovered(file_d, data_table, n2, ax)
+
+    def show_plot(self, ax):
+        &#34;&#34;&#34;
+        ###Description:
+        calls the function to plot given data files and saves the plot object by pickling it.
+        It shows the final plot after the program is terminated.
+        ###Args:
+        ax: plot object
+        &#34;&#34;&#34;
+        if len(self.file_names_sources) != 0:
+            self.read_and_plot_sources(self.file_names_sources, ax)
+        if len(self.file_names_objects) != 0:
+            self.read_and_plot_objects(self.file_names_objects, ax)
+        if self.coordinates == 1:
+            self.plot_using_coordinate(ax)
+        ax.legend(
+            loc=&#34;upper right&#34;, bbox_to_anchor=(1, 1.15), ncol=2, prop={&#34;size&#34;: 10}
+        )
+        utility.save_ax(ax)
+        plt.savefig(&#34;plot.png&#34;, format=&#34;png&#34;, dpi=300)
+        plt.show()
+
+    def accept_coord(self):
+        &#34;&#34;&#34;Accepts the coordinates (Either RA-Dec or Latitude-Longitude) from the user&#34;&#34;&#34;
+        n = input(&#34;Enter 1.RA/Dec or 2.Latitude-longitude: &#34;)
+        if n == &#34;1&#34;:
+            self.label_RaDec.append(input(&#34;enter the name: &#34;))
+            self.coord_ra.append(float(input(&#34;Enter RA&#34;)))
+            self.coord_dec.append(float(input(&#34;Enter declination&#34;)))
+        elif n == &#34;2&#34;:
+            self.label_lb.append(input(&#34;enter the name: &#34;))
+            self.coord_l.append(float(input(&#34;Enter longitude&#34;)))
+            self.coord_b.append(float(input(&#34;Enter latitude&#34;)))
+
+    def plot_using_coordinate(self, ax):
+        &#34;&#34;&#34;
+        ###Description:
+        Plots the coordinates accepted by function accept_coord()
+        ###Args:
+        ax: plot object
+        &#34;&#34;&#34;
+        j = 0
+        for i in self.label_RaDec:
+            coord1 = SkyCoord(
+                self.coord_ra[j], self.coord_dec[j], unit=(u.hourangle, u.deg)
+            )
+            coord1 = coord1.galactic
+            L = coord1.l.wrap_at(180 * u.degree).radian
+            B = coord1.b.wrap_at(180 * u.degree).radian
+            ax.scatter(L, B, color=self.colors1[0], s=80, label=self.label_RaDec[j])
+            j = j + 1
+            self.colors1.pop(0)
+        j = 0
+        for i in self.label_lb:
+            L = coord.Angle(self.coord_l[j], u.degree)
+            B = coord.Angle(self.coord_b[j], u.degree)
+            L = L.wrap_at(180 * u.degree).radian
+            B = B.wrap_at(180 * u.degree).radian
+            ax.scatter(L, B, color=self.colors1[0], s=80, label=self.label_lb[j])
+            j = j + 1
+            self.colors1.pop(0)
+
+    def accept_choice(self):
+        &#34;&#34;&#34;accepts the user&#39;s choice and depending on it, either calls the function to create new figure and plot object &#39;ax&#39;
+        and initialises the colors or use the pickeled object and existing colors.&#34;&#34;&#34;
+        ch = input(
+            &#34;1.Plot with all the option\n2.Plot on the existing graph\nEnter 1 or 2: &#34;
+        )
+        if ch == &#34;1&#34;:
+            ax = self.create_ax()
+            self.write_colors(self.colors_init)
+            self.read_colors()
+            self.user_choice()
+            self.show_plot(ax)
+            self.write_colors(self.colors1)
+        elif ch == &#34;2&#34;:
+            self.read_colors()
+            with open(&#34;../plot.pkl&#34;, &#34;rb&#34;) as fid:
+                ax1 = pickle.load(fid)
+            self.user_choice()
+            self.show_plot(ax1)
+            self.write_colors(self.colors1)
+        else:
+            print(&#34;invalid input&#34;)
+
+    def user_choice(self):
+        &#34;&#34;&#34;Accepts user choice to plot various datafiles from the user.&#34;&#34;&#34;
+        plot_choice = &#34;0&#34;
+        while plot_choice != &#34;4&#34;:
+            plot_choice = input(
+                &#34;Plot\n1.Targeted sky area\n2.Observed sources\n3.Discovered object\n4.end&#34;
+            )
+            if plot_choice == &#34;4&#34;:
+                return 0
+            elif plot_choice == &#34;1&#34;:
+                x = int(input(&#34;Enter the number of files to plot targeted file: &#34;))
+                for i in range(x):
+                    self.file_names_sources.append(input(&#34;Enter the file names: &#34;))
+                    # file with extension .list, having values of ra-dec starting with &#39;HR_&#39;
+            elif plot_choice == &#34;2&#34;:
+                print(
+                    &#34;Observed sources:\n1.Plot all observed\n2.Plot different data files&#34;
+                )
+                co = input(&#34;enter 1 or 2: &#34;)
+                if co == &#34;1&#34;:
+                    if input(&#34;append more to existing data?(y/n): &#34;) == &#34;y&#34;:
+                        y = input(&#34;Enter the file name: &#34;)
+                        x = y + &#34;.list&#34;
+                        # file with extension .list, having values of ra-dec starting with &#39;HR_&#39;
+                        utility.append_file(&#34;GHRSS observed sources.list&#34;, x)
+                        self.file_names_sources.append(&#34;GHRSS observed sources&#34;)
+                    else:
+                        self.file_names_sources.append(&#34;GHRSS observed sources&#34;)
+                elif co == &#34;2&#34;:
+                    n = int(input(&#34;Enter the number of files to plot: &#34;))
+                    for i in range(n):
+                        self.file_names_sources.append(input(&#34;Enter the file name: &#34;))
+                        # file with extension .list, having values of ra-dec starting with &#39;HR_&#39;
+                else:
+                    print(&#34;invalid input&#34;)
+
+                print(&#34;\n&#34;)
+            elif plot_choice == &#34;3&#34;:
+                dp = input(
+                    &#34;Plot\n1.Pulsars dicovered in phase-1\n2.Pulsars discovered in phase-2\n3.data files containing coordinates\n4.by giving coordiantes&#34;
+                )
+                if dp == &#34;1&#34;:
+                    if input(&#34;append new phase1 data?(y/n)&#34;) == &#34;y&#34;:
+                        y = input(&#34;Enter the file name: &#34;)
+                        x = y + &#34;.csv&#34;
+                        # .csv file with pulsar_name and period values(no header)
+                        utility.append_file(&#34;phase1.csv&#34;, x)
+                        self.file_names_objects.append(&#34;phase1&#34;)
+                    else:
+                        self.file_names_objects.append(&#34;phase1&#34;)
+                elif dp == &#34;2&#34;:
+                    if input(&#34;append new phase2 data?(y/n)&#34;) == &#34;y&#34;:
+                        y = input(&#34;Enter the file name: &#34;)
+                        x = y + &#34;.csv&#34;
+                        # .csv file with pulsar_name and period values(no header)
+                        utility.append_file(&#34;phase2.csv&#34;, x)
+                        self.file_names_objects.append(&#34;phase2&#34;)
+                    else:
+                        self.file_names_objects.append(&#34;phase2&#34;)
+                elif dp == &#34;3&#34;:
+                    file_name = input(&#34;enter the name of the file: &#34;)
+                    # .csv file with pulsar_name and period values(header:&#39;Pulsar_name,Period&#39;)
+                    self.file_names_objects.append(file_name)
+                elif dp == &#34;4&#34;:
+                    self.coordinates = 1
+                    self.accept_coord()
+                else:
+                    print(&#34;Invalid input.&#34;)
+            else:
+                print(&#34;invalid input&#34;)
+
+    def create_ax(self):
+        &#34;&#34;&#34;
+        ###Description:
+        Creates and returns the figure and the plot object &#39;ax&#39; which will be used to plot all the coordinates
+        ###Returns:
+        The plot object &#39;ax&#39;
+        &#34;&#34;&#34;
+        fig = plt.figure(figsize=(15, 15))
+        ax = fig.add_subplot(111, projection=&#34;aitoff&#34;)
+        ax.grid()
+        ax.set_ylabel(&#34;Galactic latitude, b&#34;, fontsize=15)
+        ax.set_xlabel(&#34;Galactic longitude, l&#34;, fontsize=15)
+        return ax</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="ghrss.functions.GHRSS"><code class="flex name class">
+<span>class <span class="ident">GHRSS</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GHRSS:
+    def __init__(self):
+        self.RA_source = {}
+        self.Dec_source = {}
+        self.RA_objects = {}
+        self.Dec_objects = {}
+        self.file_names_sources = []
+        self.file_names_objects = []
+        self.colors1 = []
+        self.colors2 = []
+        self.colors_init = config.COLORS
+        self.coordinates = 0
+        self.coord_ra = []
+        self.coord_dec = []
+        self.coord_l = []
+        self.coord_b = []
+        self.label_RaDec = []
+        self.label_lb = []
+        self.color_count = 0
+
+    def write_colors(self, color_new):
+        &#34;&#34;&#34;
+        ###Description
+        writes the colors existing in list colors1 and colors 2.
+        (color map can be changed according to output requirement)
+
+        ###Args:
+        color_new: the updated list of of the colors
+
+        &#34;&#34;&#34;
+        self.colors2 = iter(cm.Blues(numpy.linspace(0, 1, 5)))
+        with open(&#34;../colors.txt&#34;, &#34;w&#34;) as f:
+            for c in color_new:
+                f.write(&#34;%s\n&#34; % c)
+        f.close()
+        x = str(self.color_count)
+        with open(&#34;../colors2.txt&#34;, &#34;w&#34;) as f1:
+            f1.write(&#34;%s&#34; % x)
+        f1.close()
+
+    def read_colors(self):
+        &#34;&#34;&#34;
+        Reads the colors from the files colors.txt and colors2.txt and stores in the variables
+        &#34;&#34;&#34;
+        color1 = []
+        with open(&#34;../colors.txt&#34;, &#34;r&#34;) as file:
+            temp = file.readlines()
+        for i in temp:
+            temp2 = i.split(&#34;\n&#34;)
+            color1.append(temp2[0])
+        self.colors1 = color1
+        # color map can be changed
+        self.colors2 = iter(cm.Blues(numpy.linspace(0, 1, 6)))
+        with open(&#34;../colors2.txt&#34;, &#34;r&#34;) as file:
+            temp = file.readlines()
+        temp2 = int(temp[0])
+        while temp2:
+            c = next(self.colors2)
+            temp2 = temp2 - 1
+            self.color_count = self.color_count + 1
+
+    def set_coordinates(self, file_names, data, header, split_char):
+        &#34;&#34;&#34;
+        ###Description:
+        Takes the data read from files and obtains the coordinates from the names of the pulsar/source in the form RA and Dec
+        ###Args:
+        file_names: list of the file names
+
+        data: table consisting of the data read from files
+
+        header: header of each file
+
+        split_char: the character indicating where to split the name of source(&#39;_&#39;) or pulsar(&#39;J&#39;)
+        &#34;&#34;&#34;
+        c = []
+        q = {}
+        s = {}
+
+        for i in range(0, len(file_names)):
+            if split_char == &#34;J&#34;:
+                header_index = header[0]
+            else:
+                header_index = header[i]
+            s[i] = data[file_names[i]][header_index]
+            k = 0
+            ra = []
+            dec = []
+            for j in s[i]:
+                q[k] = s[i][k].split(split_char)
+                c = q[k][1]
+                ra.append(c[0] + c[1] + &#34;:&#34; + c[2] + c[3])
+                if len(c) == 7:
+                    dec.append(c[4] + c[5] + c[6])
+                else:
+                    dec.append(c[4] + c[5] + c[6] + &#34;:&#34; + c[7] + c[8])
+                k = k + 1
+            if split_char == &#34;J&#34;:
+                self.RA_objects[i] = ra
+                self.Dec_objects[i] = dec
+            else:
+                self.RA_source[i] = ra
+                self.Dec_source[i] = dec
+
+    def plot_area(self, files, n1, ax):
+        &#34;&#34;&#34;
+        ###Description:
+        Converts the RA-Declination of sources to galactic coordinates and plots these coordinates on the galactic coordinate system using the figure object ax.
+        The points with latitutude within the range of -5 and +5 are not plotted, because this region is avoided in the survey.
+        ###Args:
+        files: list of names of the files
+
+        ax: plot object
+        &#34;&#34;&#34;
+        c = next(self.colors2)
+
+        lat = []
+        lon = []
+        for i in range(0, len(files)):
+            lat = []
+            lon = []
+            coord1 = SkyCoord(
+                self.RA_source[i], self.Dec_source[i], unit=(u.hourangle, u.deg)
+            )
+            coord1 = coord1.galactic
+            L = coord1.l.wrap_at(180 * u.degree).radian
+            B = coord1.b.wrap_at(180 * u.degree).radian
+            c = next(self.colors2)
+            for j, k in zip(B, L):
+                if (
+                    j &lt; coord.Angle(-5, u.degree).radian
+                    or j &gt; coord.Angle(5, u.degree).radian
+                ):
+                    lat.append(j)
+                    lon.append(k)
+            ax.scatter(lon, lat, color=c, label=files[i])
+            self.color_count = self.color_count + 1
+
+    def plot_discovered(self, file_d, data, n2, ax):
+        &#34;&#34;&#34;
+        ###Description:
+        Converts the RA-declination of pulsars and RRATs to galactic coordinates.
+        Using the periods of the pulsars, they are divided into different types (normal and MSPs), RRATs are given periods as &#39;-&#39; in the files.
+        These are then plotted using different symbols, same color for a given file.
+        ###Args:
+        file_d: list of the file names (discovery data)
+
+        data: table consisting of data read from files
+
+        ax: plot object
+        &#34;&#34;&#34;
+        for i in range(0, len(file_d)):
+            coord1 = SkyCoord(
+                self.RA_objects[i], self.Dec_objects[i], unit=(u.hourangle, u.deg)
+            )
+            coord1 = coord1.galactic
+            L = coord1.l.wrap_at(180 * u.degree).radian
+            B = coord1.b.wrap_at(90 * u.degree).radian
+            k = 0
+            lat_rrat = []
+            lat_msp = []
+            lat_normalpulsar = []
+            lon_rrat = []
+            lon_msp = []
+            lon_normalpulsar = []
+            for x in L:
+                p = data[file_d[i]][&#34;Period&#34;][k]
+                if float(p) &lt; 0:
+                    lat_rrat.append(L[k])
+                    lon_rrat.append(B[k])
+                elif float(p) &lt; 30:
+                    lat_msp.append(L[k])
+                    lon_msp.append(B[k])
+                else:
+                    lat_normalpulsar.append(L[k])
+                    lon_normalpulsar.append(B[k])
+                k = k + 1
+            if len(lat_rrat) != 0:
+                ax.scatter(
+                    lat_rrat,
+                    lon_rrat,
+                    color=self.colors1[0],
+                    marker=&#34;^&#34;,
+                    s=80,
+                    label=&#34;RRATs discovered in &#34; + file_d[i],
+                )
+            if len(lat_normalpulsar) != 0:
+                ax.scatter(
+                    lat_normalpulsar,
+                    lon_normalpulsar,
+                    color=self.colors1[0],
+                    label=&#34;Pulsars discovered in &#34; + file_d[i],
+                )
+            if len(lat_msp) != 0:
+                ax.scatter(
+                    lat_msp,
+                    lon_msp,
+                    color=self.colors1[0],
+                    marker=&#34;*&#34;,
+                    s=80,
+                    label=&#34;MSPs discovered in &#34; + file_d[i],
+                )
+            self.colors1.pop(0)
+
+    def read_and_plot_sources(self, file_names, ax):
+        &#34;&#34;&#34;
+        ###Description:
+        Calls the function to read data files containing the list of sources
+        then subsequently calls the function to obtain coordinates and the function to plot the same.
+        ###Args:
+        file_names: list of file names
+
+        ax: plot object
+        &#34;&#34;&#34;
+        data_table, n1, header = utility.read_data(file_names, header=True)
+        if n1 != 0:
+            self.set_coordinates(file_names, data_table, header, split_char=&#34;_&#34;)
+            self.plot_area(file_names, n1, ax)
+
+    def read_and_plot_objects(self, file_d, ax):
+        &#34;&#34;&#34;
+        ###Description:
+        Calls the function to read data files containing the list of pulsar names and period (.csv files)
+        then subsequently calls the function to obtain coordinates and the function to plot the same.
+        ###Args:
+        file_d: list of files names
+
+        ax: plot object
+        &#34;&#34;&#34;
+        data_table, n2, header = utility.read_data(file_d, header=False)
+        if data_table:
+            self.set_coordinates(file_d, data_table, header, split_char=&#34;J&#34;)
+            self.plot_discovered(file_d, data_table, n2, ax)
+
+    def show_plot(self, ax):
+        &#34;&#34;&#34;
+        ###Description:
+        calls the function to plot given data files and saves the plot object by pickling it.
+        It shows the final plot after the program is terminated.
+        ###Args:
+        ax: plot object
+        &#34;&#34;&#34;
+        if len(self.file_names_sources) != 0:
+            self.read_and_plot_sources(self.file_names_sources, ax)
+        if len(self.file_names_objects) != 0:
+            self.read_and_plot_objects(self.file_names_objects, ax)
+        if self.coordinates == 1:
+            self.plot_using_coordinate(ax)
+        ax.legend(
+            loc=&#34;upper right&#34;, bbox_to_anchor=(1, 1.15), ncol=2, prop={&#34;size&#34;: 10}
+        )
+        utility.save_ax(ax)
+        plt.savefig(&#34;plot.png&#34;, format=&#34;png&#34;, dpi=300)
+        plt.show()
+
+    def accept_coord(self):
+        &#34;&#34;&#34;Accepts the coordinates (Either RA-Dec or Latitude-Longitude) from the user&#34;&#34;&#34;
+        n = input(&#34;Enter 1.RA/Dec or 2.Latitude-longitude: &#34;)
+        if n == &#34;1&#34;:
+            self.label_RaDec.append(input(&#34;enter the name: &#34;))
+            self.coord_ra.append(float(input(&#34;Enter RA&#34;)))
+            self.coord_dec.append(float(input(&#34;Enter declination&#34;)))
+        elif n == &#34;2&#34;:
+            self.label_lb.append(input(&#34;enter the name: &#34;))
+            self.coord_l.append(float(input(&#34;Enter longitude&#34;)))
+            self.coord_b.append(float(input(&#34;Enter latitude&#34;)))
+
+    def plot_using_coordinate(self, ax):
+        &#34;&#34;&#34;
+        ###Description:
+        Plots the coordinates accepted by function accept_coord()
+        ###Args:
+        ax: plot object
+        &#34;&#34;&#34;
+        j = 0
+        for i in self.label_RaDec:
+            coord1 = SkyCoord(
+                self.coord_ra[j], self.coord_dec[j], unit=(u.hourangle, u.deg)
+            )
+            coord1 = coord1.galactic
+            L = coord1.l.wrap_at(180 * u.degree).radian
+            B = coord1.b.wrap_at(180 * u.degree).radian
+            ax.scatter(L, B, color=self.colors1[0], s=80, label=self.label_RaDec[j])
+            j = j + 1
+            self.colors1.pop(0)
+        j = 0
+        for i in self.label_lb:
+            L = coord.Angle(self.coord_l[j], u.degree)
+            B = coord.Angle(self.coord_b[j], u.degree)
+            L = L.wrap_at(180 * u.degree).radian
+            B = B.wrap_at(180 * u.degree).radian
+            ax.scatter(L, B, color=self.colors1[0], s=80, label=self.label_lb[j])
+            j = j + 1
+            self.colors1.pop(0)
+
+    def accept_choice(self):
+        &#34;&#34;&#34;accepts the user&#39;s choice and depending on it, either calls the function to create new figure and plot object &#39;ax&#39;
+        and initialises the colors or use the pickeled object and existing colors.&#34;&#34;&#34;
+        ch = input(
+            &#34;1.Plot with all the option\n2.Plot on the existing graph\nEnter 1 or 2: &#34;
+        )
+        if ch == &#34;1&#34;:
+            ax = self.create_ax()
+            self.write_colors(self.colors_init)
+            self.read_colors()
+            self.user_choice()
+            self.show_plot(ax)
+            self.write_colors(self.colors1)
+        elif ch == &#34;2&#34;:
+            self.read_colors()
+            with open(&#34;../plot.pkl&#34;, &#34;rb&#34;) as fid:
+                ax1 = pickle.load(fid)
+            self.user_choice()
+            self.show_plot(ax1)
+            self.write_colors(self.colors1)
+        else:
+            print(&#34;invalid input&#34;)
+
+    def user_choice(self):
+        &#34;&#34;&#34;Accepts user choice to plot various datafiles from the user.&#34;&#34;&#34;
+        plot_choice = &#34;0&#34;
+        while plot_choice != &#34;4&#34;:
+            plot_choice = input(
+                &#34;Plot\n1.Targeted sky area\n2.Observed sources\n3.Discovered object\n4.end&#34;
+            )
+            if plot_choice == &#34;4&#34;:
+                return 0
+            elif plot_choice == &#34;1&#34;:
+                x = int(input(&#34;Enter the number of files to plot targeted file: &#34;))
+                for i in range(x):
+                    self.file_names_sources.append(input(&#34;Enter the file names: &#34;))
+                    # file with extension .list, having values of ra-dec starting with &#39;HR_&#39;
+            elif plot_choice == &#34;2&#34;:
+                print(
+                    &#34;Observed sources:\n1.Plot all observed\n2.Plot different data files&#34;
+                )
+                co = input(&#34;enter 1 or 2: &#34;)
+                if co == &#34;1&#34;:
+                    if input(&#34;append more to existing data?(y/n): &#34;) == &#34;y&#34;:
+                        y = input(&#34;Enter the file name: &#34;)
+                        x = y + &#34;.list&#34;
+                        # file with extension .list, having values of ra-dec starting with &#39;HR_&#39;
+                        utility.append_file(&#34;GHRSS observed sources.list&#34;, x)
+                        self.file_names_sources.append(&#34;GHRSS observed sources&#34;)
+                    else:
+                        self.file_names_sources.append(&#34;GHRSS observed sources&#34;)
+                elif co == &#34;2&#34;:
+                    n = int(input(&#34;Enter the number of files to plot: &#34;))
+                    for i in range(n):
+                        self.file_names_sources.append(input(&#34;Enter the file name: &#34;))
+                        # file with extension .list, having values of ra-dec starting with &#39;HR_&#39;
+                else:
+                    print(&#34;invalid input&#34;)
+
+                print(&#34;\n&#34;)
+            elif plot_choice == &#34;3&#34;:
+                dp = input(
+                    &#34;Plot\n1.Pulsars dicovered in phase-1\n2.Pulsars discovered in phase-2\n3.data files containing coordinates\n4.by giving coordiantes&#34;
+                )
+                if dp == &#34;1&#34;:
+                    if input(&#34;append new phase1 data?(y/n)&#34;) == &#34;y&#34;:
+                        y = input(&#34;Enter the file name: &#34;)
+                        x = y + &#34;.csv&#34;
+                        # .csv file with pulsar_name and period values(no header)
+                        utility.append_file(&#34;phase1.csv&#34;, x)
+                        self.file_names_objects.append(&#34;phase1&#34;)
+                    else:
+                        self.file_names_objects.append(&#34;phase1&#34;)
+                elif dp == &#34;2&#34;:
+                    if input(&#34;append new phase2 data?(y/n)&#34;) == &#34;y&#34;:
+                        y = input(&#34;Enter the file name: &#34;)
+                        x = y + &#34;.csv&#34;
+                        # .csv file with pulsar_name and period values(no header)
+                        utility.append_file(&#34;phase2.csv&#34;, x)
+                        self.file_names_objects.append(&#34;phase2&#34;)
+                    else:
+                        self.file_names_objects.append(&#34;phase2&#34;)
+                elif dp == &#34;3&#34;:
+                    file_name = input(&#34;enter the name of the file: &#34;)
+                    # .csv file with pulsar_name and period values(header:&#39;Pulsar_name,Period&#39;)
+                    self.file_names_objects.append(file_name)
+                elif dp == &#34;4&#34;:
+                    self.coordinates = 1
+                    self.accept_coord()
+                else:
+                    print(&#34;Invalid input.&#34;)
+            else:
+                print(&#34;invalid input&#34;)
+
+    def create_ax(self):
+        &#34;&#34;&#34;
+        ###Description:
+        Creates and returns the figure and the plot object &#39;ax&#39; which will be used to plot all the coordinates
+        ###Returns:
+        The plot object &#39;ax&#39;
+        &#34;&#34;&#34;
+        fig = plt.figure(figsize=(15, 15))
+        ax = fig.add_subplot(111, projection=&#34;aitoff&#34;)
+        ax.grid()
+        ax.set_ylabel(&#34;Galactic latitude, b&#34;, fontsize=15)
+        ax.set_xlabel(&#34;Galactic longitude, l&#34;, fontsize=15)
+        return ax</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="ghrss.functions.GHRSS.accept_choice"><code class="name flex">
+<span>def <span class="ident">accept_choice</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>accepts the user's choice and depending on it, either calls the function to create new figure and plot object 'ax'
+and initialises the colors or use the pickeled object and existing colors.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def accept_choice(self):
+    &#34;&#34;&#34;accepts the user&#39;s choice and depending on it, either calls the function to create new figure and plot object &#39;ax&#39;
+    and initialises the colors or use the pickeled object and existing colors.&#34;&#34;&#34;
+    ch = input(
+        &#34;1.Plot with all the option\n2.Plot on the existing graph\nEnter 1 or 2: &#34;
+    )
+    if ch == &#34;1&#34;:
+        ax = self.create_ax()
+        self.write_colors(self.colors_init)
+        self.read_colors()
+        self.user_choice()
+        self.show_plot(ax)
+        self.write_colors(self.colors1)
+    elif ch == &#34;2&#34;:
+        self.read_colors()
+        with open(&#34;../plot.pkl&#34;, &#34;rb&#34;) as fid:
+            ax1 = pickle.load(fid)
+        self.user_choice()
+        self.show_plot(ax1)
+        self.write_colors(self.colors1)
+    else:
+        print(&#34;invalid input&#34;)</code></pre>
+</details>
+</dd>
+<dt id="ghrss.functions.GHRSS.accept_coord"><code class="name flex">
+<span>def <span class="ident">accept_coord</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Accepts the coordinates (Either RA-Dec or Latitude-Longitude) from the user</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def accept_coord(self):
+    &#34;&#34;&#34;Accepts the coordinates (Either RA-Dec or Latitude-Longitude) from the user&#34;&#34;&#34;
+    n = input(&#34;Enter 1.RA/Dec or 2.Latitude-longitude: &#34;)
+    if n == &#34;1&#34;:
+        self.label_RaDec.append(input(&#34;enter the name: &#34;))
+        self.coord_ra.append(float(input(&#34;Enter RA&#34;)))
+        self.coord_dec.append(float(input(&#34;Enter declination&#34;)))
+    elif n == &#34;2&#34;:
+        self.label_lb.append(input(&#34;enter the name: &#34;))
+        self.coord_l.append(float(input(&#34;Enter longitude&#34;)))
+        self.coord_b.append(float(input(&#34;Enter latitude&#34;)))</code></pre>
+</details>
+</dd>
+<dt id="ghrss.functions.GHRSS.create_ax"><code class="name flex">
+<span>def <span class="ident">create_ax</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><h3 id="description">Description:</h3>
+<p>Creates and returns the figure and the plot object 'ax' which will be used to plot all the coordinates</p>
+<h3 id="returns">Returns:</h3>
+<p>The plot object 'ax'</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_ax(self):
+    &#34;&#34;&#34;
+    ###Description:
+    Creates and returns the figure and the plot object &#39;ax&#39; which will be used to plot all the coordinates
+    ###Returns:
+    The plot object &#39;ax&#39;
+    &#34;&#34;&#34;
+    fig = plt.figure(figsize=(15, 15))
+    ax = fig.add_subplot(111, projection=&#34;aitoff&#34;)
+    ax.grid()
+    ax.set_ylabel(&#34;Galactic latitude, b&#34;, fontsize=15)
+    ax.set_xlabel(&#34;Galactic longitude, l&#34;, fontsize=15)
+    return ax</code></pre>
+</details>
+</dd>
+<dt id="ghrss.functions.GHRSS.plot_area"><code class="name flex">
+<span>def <span class="ident">plot_area</span></span>(<span>self, files, n1, ax)</span>
+</code></dt>
+<dd>
+<div class="desc"><h3 id="description">Description:</h3>
+<p>Converts the RA-Declination of sources to galactic coordinates and plots these coordinates on the galactic coordinate system using the figure object ax.
+The points with latitutude within the range of -5 and +5 are not plotted, because this region is avoided in the survey.</p>
+<h3 id="args">Args:</h3>
+<p>files: list of names of the files</p>
+<p>ax: plot object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_area(self, files, n1, ax):
+    &#34;&#34;&#34;
+    ###Description:
+    Converts the RA-Declination of sources to galactic coordinates and plots these coordinates on the galactic coordinate system using the figure object ax.
+    The points with latitutude within the range of -5 and +5 are not plotted, because this region is avoided in the survey.
+    ###Args:
+    files: list of names of the files
+
+    ax: plot object
+    &#34;&#34;&#34;
+    c = next(self.colors2)
+
+    lat = []
+    lon = []
+    for i in range(0, len(files)):
+        lat = []
+        lon = []
+        coord1 = SkyCoord(
+            self.RA_source[i], self.Dec_source[i], unit=(u.hourangle, u.deg)
+        )
+        coord1 = coord1.galactic
+        L = coord1.l.wrap_at(180 * u.degree).radian
+        B = coord1.b.wrap_at(180 * u.degree).radian
+        c = next(self.colors2)
+        for j, k in zip(B, L):
+            if (
+                j &lt; coord.Angle(-5, u.degree).radian
+                or j &gt; coord.Angle(5, u.degree).radian
+            ):
+                lat.append(j)
+                lon.append(k)
+        ax.scatter(lon, lat, color=c, label=files[i])
+        self.color_count = self.color_count + 1</code></pre>
+</details>
+</dd>
+<dt id="ghrss.functions.GHRSS.plot_discovered"><code class="name flex">
+<span>def <span class="ident">plot_discovered</span></span>(<span>self, file_d, data, n2, ax)</span>
+</code></dt>
+<dd>
+<div class="desc"><h3 id="description">Description:</h3>
+<p>Converts the RA-declination of pulsars and RRATs to galactic coordinates.
+Using the periods of the pulsars, they are divided into different types (normal and MSPs), RRATs are given periods as '-' in the files.
+These are then plotted using different symbols, same color for a given file.</p>
+<h3 id="args">Args:</h3>
+<p>file_d: list of the file names (discovery data)</p>
+<p>data: table consisting of data read from files</p>
+<p>ax: plot object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_discovered(self, file_d, data, n2, ax):
+    &#34;&#34;&#34;
+    ###Description:
+    Converts the RA-declination of pulsars and RRATs to galactic coordinates.
+    Using the periods of the pulsars, they are divided into different types (normal and MSPs), RRATs are given periods as &#39;-&#39; in the files.
+    These are then plotted using different symbols, same color for a given file.
+    ###Args:
+    file_d: list of the file names (discovery data)
+
+    data: table consisting of data read from files
+
+    ax: plot object
+    &#34;&#34;&#34;
+    for i in range(0, len(file_d)):
+        coord1 = SkyCoord(
+            self.RA_objects[i], self.Dec_objects[i], unit=(u.hourangle, u.deg)
+        )
+        coord1 = coord1.galactic
+        L = coord1.l.wrap_at(180 * u.degree).radian
+        B = coord1.b.wrap_at(90 * u.degree).radian
+        k = 0
+        lat_rrat = []
+        lat_msp = []
+        lat_normalpulsar = []
+        lon_rrat = []
+        lon_msp = []
+        lon_normalpulsar = []
+        for x in L:
+            p = data[file_d[i]][&#34;Period&#34;][k]
+            if float(p) &lt; 0:
+                lat_rrat.append(L[k])
+                lon_rrat.append(B[k])
+            elif float(p) &lt; 30:
+                lat_msp.append(L[k])
+                lon_msp.append(B[k])
+            else:
+                lat_normalpulsar.append(L[k])
+                lon_normalpulsar.append(B[k])
+            k = k + 1
+        if len(lat_rrat) != 0:
+            ax.scatter(
+                lat_rrat,
+                lon_rrat,
+                color=self.colors1[0],
+                marker=&#34;^&#34;,
+                s=80,
+                label=&#34;RRATs discovered in &#34; + file_d[i],
+            )
+        if len(lat_normalpulsar) != 0:
+            ax.scatter(
+                lat_normalpulsar,
+                lon_normalpulsar,
+                color=self.colors1[0],
+                label=&#34;Pulsars discovered in &#34; + file_d[i],
+            )
+        if len(lat_msp) != 0:
+            ax.scatter(
+                lat_msp,
+                lon_msp,
+                color=self.colors1[0],
+                marker=&#34;*&#34;,
+                s=80,
+                label=&#34;MSPs discovered in &#34; + file_d[i],
+            )
+        self.colors1.pop(0)</code></pre>
+</details>
+</dd>
+<dt id="ghrss.functions.GHRSS.plot_using_coordinate"><code class="name flex">
+<span>def <span class="ident">plot_using_coordinate</span></span>(<span>self, ax)</span>
+</code></dt>
+<dd>
+<div class="desc"><h3 id="description">Description:</h3>
+<p>Plots the coordinates accepted by function accept_coord()</p>
+<h3 id="args">Args:</h3>
+<p>ax: plot object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_using_coordinate(self, ax):
+    &#34;&#34;&#34;
+    ###Description:
+    Plots the coordinates accepted by function accept_coord()
+    ###Args:
+    ax: plot object
+    &#34;&#34;&#34;
+    j = 0
+    for i in self.label_RaDec:
+        coord1 = SkyCoord(
+            self.coord_ra[j], self.coord_dec[j], unit=(u.hourangle, u.deg)
+        )
+        coord1 = coord1.galactic
+        L = coord1.l.wrap_at(180 * u.degree).radian
+        B = coord1.b.wrap_at(180 * u.degree).radian
+        ax.scatter(L, B, color=self.colors1[0], s=80, label=self.label_RaDec[j])
+        j = j + 1
+        self.colors1.pop(0)
+    j = 0
+    for i in self.label_lb:
+        L = coord.Angle(self.coord_l[j], u.degree)
+        B = coord.Angle(self.coord_b[j], u.degree)
+        L = L.wrap_at(180 * u.degree).radian
+        B = B.wrap_at(180 * u.degree).radian
+        ax.scatter(L, B, color=self.colors1[0], s=80, label=self.label_lb[j])
+        j = j + 1
+        self.colors1.pop(0)</code></pre>
+</details>
+</dd>
+<dt id="ghrss.functions.GHRSS.read_and_plot_objects"><code class="name flex">
+<span>def <span class="ident">read_and_plot_objects</span></span>(<span>self, file_d, ax)</span>
+</code></dt>
+<dd>
+<div class="desc"><h3 id="description">Description:</h3>
+<p>Calls the function to read data files containing the list of pulsar names and period (.csv files)
+then subsequently calls the function to obtain coordinates and the function to plot the same.</p>
+<h3 id="args">Args:</h3>
+<p>file_d: list of files names</p>
+<p>ax: plot object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_and_plot_objects(self, file_d, ax):
+    &#34;&#34;&#34;
+    ###Description:
+    Calls the function to read data files containing the list of pulsar names and period (.csv files)
+    then subsequently calls the function to obtain coordinates and the function to plot the same.
+    ###Args:
+    file_d: list of files names
+
+    ax: plot object
+    &#34;&#34;&#34;
+    data_table, n2, header = utility.read_data(file_d, header=False)
+    if data_table:
+        self.set_coordinates(file_d, data_table, header, split_char=&#34;J&#34;)
+        self.plot_discovered(file_d, data_table, n2, ax)</code></pre>
+</details>
+</dd>
+<dt id="ghrss.functions.GHRSS.read_and_plot_sources"><code class="name flex">
+<span>def <span class="ident">read_and_plot_sources</span></span>(<span>self, file_names, ax)</span>
+</code></dt>
+<dd>
+<div class="desc"><h3 id="description">Description:</h3>
+<p>Calls the function to read data files containing the list of sources
+then subsequently calls the function to obtain coordinates and the function to plot the same.</p>
+<h3 id="args">Args:</h3>
+<p>file_names: list of file names</p>
+<p>ax: plot object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_and_plot_sources(self, file_names, ax):
+    &#34;&#34;&#34;
+    ###Description:
+    Calls the function to read data files containing the list of sources
+    then subsequently calls the function to obtain coordinates and the function to plot the same.
+    ###Args:
+    file_names: list of file names
+
+    ax: plot object
+    &#34;&#34;&#34;
+    data_table, n1, header = utility.read_data(file_names, header=True)
+    if n1 != 0:
+        self.set_coordinates(file_names, data_table, header, split_char=&#34;_&#34;)
+        self.plot_area(file_names, n1, ax)</code></pre>
+</details>
+</dd>
+<dt id="ghrss.functions.GHRSS.read_colors"><code class="name flex">
+<span>def <span class="ident">read_colors</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reads the colors from the files colors.txt and colors2.txt and stores in the variables</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_colors(self):
+    &#34;&#34;&#34;
+    Reads the colors from the files colors.txt and colors2.txt and stores in the variables
+    &#34;&#34;&#34;
+    color1 = []
+    with open(&#34;../colors.txt&#34;, &#34;r&#34;) as file:
+        temp = file.readlines()
+    for i in temp:
+        temp2 = i.split(&#34;\n&#34;)
+        color1.append(temp2[0])
+    self.colors1 = color1
+    # color map can be changed
+    self.colors2 = iter(cm.Blues(numpy.linspace(0, 1, 6)))
+    with open(&#34;../colors2.txt&#34;, &#34;r&#34;) as file:
+        temp = file.readlines()
+    temp2 = int(temp[0])
+    while temp2:
+        c = next(self.colors2)
+        temp2 = temp2 - 1
+        self.color_count = self.color_count + 1</code></pre>
+</details>
+</dd>
+<dt id="ghrss.functions.GHRSS.set_coordinates"><code class="name flex">
+<span>def <span class="ident">set_coordinates</span></span>(<span>self, file_names, data, header, split_char)</span>
+</code></dt>
+<dd>
+<div class="desc"><h3 id="description">Description:</h3>
+<p>Takes the data read from files and obtains the coordinates from the names of the pulsar/source in the form RA and Dec</p>
+<h3 id="args">Args:</h3>
+<p>file_names: list of the file names</p>
+<p>data: table consisting of the data read from files</p>
+<p>header: header of each file</p>
+<p>split_char: the character indicating where to split the name of source('_') or pulsar('J')</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_coordinates(self, file_names, data, header, split_char):
+    &#34;&#34;&#34;
+    ###Description:
+    Takes the data read from files and obtains the coordinates from the names of the pulsar/source in the form RA and Dec
+    ###Args:
+    file_names: list of the file names
+
+    data: table consisting of the data read from files
+
+    header: header of each file
+
+    split_char: the character indicating where to split the name of source(&#39;_&#39;) or pulsar(&#39;J&#39;)
+    &#34;&#34;&#34;
+    c = []
+    q = {}
+    s = {}
+
+    for i in range(0, len(file_names)):
+        if split_char == &#34;J&#34;:
+            header_index = header[0]
+        else:
+            header_index = header[i]
+        s[i] = data[file_names[i]][header_index]
+        k = 0
+        ra = []
+        dec = []
+        for j in s[i]:
+            q[k] = s[i][k].split(split_char)
+            c = q[k][1]
+            ra.append(c[0] + c[1] + &#34;:&#34; + c[2] + c[3])
+            if len(c) == 7:
+                dec.append(c[4] + c[5] + c[6])
+            else:
+                dec.append(c[4] + c[5] + c[6] + &#34;:&#34; + c[7] + c[8])
+            k = k + 1
+        if split_char == &#34;J&#34;:
+            self.RA_objects[i] = ra
+            self.Dec_objects[i] = dec
+        else:
+            self.RA_source[i] = ra
+            self.Dec_source[i] = dec</code></pre>
+</details>
+</dd>
+<dt id="ghrss.functions.GHRSS.show_plot"><code class="name flex">
+<span>def <span class="ident">show_plot</span></span>(<span>self, ax)</span>
+</code></dt>
+<dd>
+<div class="desc"><h3 id="description">Description:</h3>
+<p>calls the function to plot given data files and saves the plot object by pickling it.
+It shows the final plot after the program is terminated.</p>
+<h3 id="args">Args:</h3>
+<p>ax: plot object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show_plot(self, ax):
+    &#34;&#34;&#34;
+    ###Description:
+    calls the function to plot given data files and saves the plot object by pickling it.
+    It shows the final plot after the program is terminated.
+    ###Args:
+    ax: plot object
+    &#34;&#34;&#34;
+    if len(self.file_names_sources) != 0:
+        self.read_and_plot_sources(self.file_names_sources, ax)
+    if len(self.file_names_objects) != 0:
+        self.read_and_plot_objects(self.file_names_objects, ax)
+    if self.coordinates == 1:
+        self.plot_using_coordinate(ax)
+    ax.legend(
+        loc=&#34;upper right&#34;, bbox_to_anchor=(1, 1.15), ncol=2, prop={&#34;size&#34;: 10}
+    )
+    utility.save_ax(ax)
+    plt.savefig(&#34;plot.png&#34;, format=&#34;png&#34;, dpi=300)
+    plt.show()</code></pre>
+</details>
+</dd>
+<dt id="ghrss.functions.GHRSS.user_choice"><code class="name flex">
+<span>def <span class="ident">user_choice</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Accepts user choice to plot various datafiles from the user.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def user_choice(self):
+    &#34;&#34;&#34;Accepts user choice to plot various datafiles from the user.&#34;&#34;&#34;
+    plot_choice = &#34;0&#34;
+    while plot_choice != &#34;4&#34;:
+        plot_choice = input(
+            &#34;Plot\n1.Targeted sky area\n2.Observed sources\n3.Discovered object\n4.end&#34;
+        )
+        if plot_choice == &#34;4&#34;:
+            return 0
+        elif plot_choice == &#34;1&#34;:
+            x = int(input(&#34;Enter the number of files to plot targeted file: &#34;))
+            for i in range(x):
+                self.file_names_sources.append(input(&#34;Enter the file names: &#34;))
+                # file with extension .list, having values of ra-dec starting with &#39;HR_&#39;
+        elif plot_choice == &#34;2&#34;:
+            print(
+                &#34;Observed sources:\n1.Plot all observed\n2.Plot different data files&#34;
+            )
+            co = input(&#34;enter 1 or 2: &#34;)
+            if co == &#34;1&#34;:
+                if input(&#34;append more to existing data?(y/n): &#34;) == &#34;y&#34;:
+                    y = input(&#34;Enter the file name: &#34;)
+                    x = y + &#34;.list&#34;
+                    # file with extension .list, having values of ra-dec starting with &#39;HR_&#39;
+                    utility.append_file(&#34;GHRSS observed sources.list&#34;, x)
+                    self.file_names_sources.append(&#34;GHRSS observed sources&#34;)
+                else:
+                    self.file_names_sources.append(&#34;GHRSS observed sources&#34;)
+            elif co == &#34;2&#34;:
+                n = int(input(&#34;Enter the number of files to plot: &#34;))
+                for i in range(n):
+                    self.file_names_sources.append(input(&#34;Enter the file name: &#34;))
+                    # file with extension .list, having values of ra-dec starting with &#39;HR_&#39;
+            else:
+                print(&#34;invalid input&#34;)
+
+            print(&#34;\n&#34;)
+        elif plot_choice == &#34;3&#34;:
+            dp = input(
+                &#34;Plot\n1.Pulsars dicovered in phase-1\n2.Pulsars discovered in phase-2\n3.data files containing coordinates\n4.by giving coordiantes&#34;
+            )
+            if dp == &#34;1&#34;:
+                if input(&#34;append new phase1 data?(y/n)&#34;) == &#34;y&#34;:
+                    y = input(&#34;Enter the file name: &#34;)
+                    x = y + &#34;.csv&#34;
+                    # .csv file with pulsar_name and period values(no header)
+                    utility.append_file(&#34;phase1.csv&#34;, x)
+                    self.file_names_objects.append(&#34;phase1&#34;)
+                else:
+                    self.file_names_objects.append(&#34;phase1&#34;)
+            elif dp == &#34;2&#34;:
+                if input(&#34;append new phase2 data?(y/n)&#34;) == &#34;y&#34;:
+                    y = input(&#34;Enter the file name: &#34;)
+                    x = y + &#34;.csv&#34;
+                    # .csv file with pulsar_name and period values(no header)
+                    utility.append_file(&#34;phase2.csv&#34;, x)
+                    self.file_names_objects.append(&#34;phase2&#34;)
+                else:
+                    self.file_names_objects.append(&#34;phase2&#34;)
+            elif dp == &#34;3&#34;:
+                file_name = input(&#34;enter the name of the file: &#34;)
+                # .csv file with pulsar_name and period values(header:&#39;Pulsar_name,Period&#39;)
+                self.file_names_objects.append(file_name)
+            elif dp == &#34;4&#34;:
+                self.coordinates = 1
+                self.accept_coord()
+            else:
+                print(&#34;Invalid input.&#34;)
+        else:
+            print(&#34;invalid input&#34;)</code></pre>
+</details>
+</dd>
+<dt id="ghrss.functions.GHRSS.write_colors"><code class="name flex">
+<span>def <span class="ident">write_colors</span></span>(<span>self, color_new)</span>
+</code></dt>
+<dd>
+<div class="desc"><h3 id="description">Description</h3>
+<p>writes the colors existing in list colors1 and colors 2.
+(color map can be changed according to output requirement)</p>
+<h3 id="args">Args:</h3>
+<p>color_new: the updated list of of the colors</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def write_colors(self, color_new):
+    &#34;&#34;&#34;
+    ###Description
+    writes the colors existing in list colors1 and colors 2.
+    (color map can be changed according to output requirement)
+
+    ###Args:
+    color_new: the updated list of of the colors
+
+    &#34;&#34;&#34;
+    self.colors2 = iter(cm.Blues(numpy.linspace(0, 1, 5)))
+    with open(&#34;../colors.txt&#34;, &#34;w&#34;) as f:
+        for c in color_new:
+            f.write(&#34;%s\n&#34; % c)
+    f.close()
+    x = str(self.color_count)
+    with open(&#34;../colors2.txt&#34;, &#34;w&#34;) as f1:
+        f1.write(&#34;%s&#34; % x)
+    f1.close()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ghrss" href="index.html">ghrss</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="ghrss.functions.GHRSS" href="#ghrss.functions.GHRSS">GHRSS</a></code></h4>
+<ul class="">
+<li><code><a title="ghrss.functions.GHRSS.accept_choice" href="#ghrss.functions.GHRSS.accept_choice">accept_choice</a></code></li>
+<li><code><a title="ghrss.functions.GHRSS.accept_coord" href="#ghrss.functions.GHRSS.accept_coord">accept_coord</a></code></li>
+<li><code><a title="ghrss.functions.GHRSS.create_ax" href="#ghrss.functions.GHRSS.create_ax">create_ax</a></code></li>
+<li><code><a title="ghrss.functions.GHRSS.plot_area" href="#ghrss.functions.GHRSS.plot_area">plot_area</a></code></li>
+<li><code><a title="ghrss.functions.GHRSS.plot_discovered" href="#ghrss.functions.GHRSS.plot_discovered">plot_discovered</a></code></li>
+<li><code><a title="ghrss.functions.GHRSS.plot_using_coordinate" href="#ghrss.functions.GHRSS.plot_using_coordinate">plot_using_coordinate</a></code></li>
+<li><code><a title="ghrss.functions.GHRSS.read_and_plot_objects" href="#ghrss.functions.GHRSS.read_and_plot_objects">read_and_plot_objects</a></code></li>
+<li><code><a title="ghrss.functions.GHRSS.read_and_plot_sources" href="#ghrss.functions.GHRSS.read_and_plot_sources">read_and_plot_sources</a></code></li>
+<li><code><a title="ghrss.functions.GHRSS.read_colors" href="#ghrss.functions.GHRSS.read_colors">read_colors</a></code></li>
+<li><code><a title="ghrss.functions.GHRSS.set_coordinates" href="#ghrss.functions.GHRSS.set_coordinates">set_coordinates</a></code></li>
+<li><code><a title="ghrss.functions.GHRSS.show_plot" href="#ghrss.functions.GHRSS.show_plot">show_plot</a></code></li>
+<li><code><a title="ghrss.functions.GHRSS.user_choice" href="#ghrss.functions.GHRSS.user_choice">user_choice</a></code></li>
+<li><code><a title="ghrss.functions.GHRSS.write_colors" href="#ghrss.functions.GHRSS.write_colors">write_colors</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
